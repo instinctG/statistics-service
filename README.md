@@ -56,7 +56,7 @@ docker-compose.yml
 
 1. Клонируем репозиторий:
 ```
-git clone https://github.com/instinctG/statistics_service.git
+git clone https://github.com/instinctG/statistics-service.git
 ```
 
 2. Билдим и поднимаем контейнеры в docker-compose (app + PostgreSQL containers)
