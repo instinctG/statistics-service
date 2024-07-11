@@ -2,14 +2,13 @@
 ***
 ## Обзор
 Сервис Сбора Статистики - это сервис на Go, который взаимодействует с PostgreSQL для управления книгами ордеров и историей ордеров. Эта документация предоставляет обзор сервиса, его API-эндпоинтов и как настроить и запустить его.
-***
+
 ## Задача:
 Требуется реализовать сервис, у которого 4 ручки:
 - GetOrderBook(exchange_name, pair string) ([]*DepthOrder, error)
 - SaveOrderBook(orderBook *OrderBook) error
 - GetOrderHistory(client *Client)  ([]*HistoryOrder, error)
 - SaveOrder(client *Client, order *HistoryOrder) error
-***
 
 ### Используемые технологии:
 
@@ -18,7 +17,7 @@
 - pgxpool
 - PostgreSQL
 - Docker
-***
+
 ## Содержание
 
 1. [Конфигурация](#конфигурация)
@@ -67,16 +66,15 @@ git clone https://github.com/instinctG/statistics-service.git
 make up
 ```
 - если с первого раза не получилось запустить сервер, можно повторно выполнить команду make up
-***
 
 Завершить работу сервиса 
-```sh
+```
 make down или Ctrl+C
 ```
 
 Ниже предоставлена информация по эндпоинтам, а также примеры взаимодействия с API.
 
-***
+
 ## API Эндпоинты
 
 Сервис предоставляет следующие API-эндпоинты:
@@ -123,7 +121,7 @@ GET http://localhost:8080/api/get-order-book?exchange_name=Sber&pair=UZS_TON
     ]
 }
 ```
-***
+
 ### Save Order Book
 
 - **Эндпоинт**: `/api/save-order-book`
@@ -159,7 +157,8 @@ POST http://localhost:8080/api/save-order-book
   "message" : "Order book saved successfully"
 }
 ```
-***
+
+
 ### Get Order History
 
 - **Эндпоинт**: `/api/get-history`
